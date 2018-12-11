@@ -33,7 +33,7 @@
                   $_SESSION['username'] = 'admin';
                   
                   echo 'You have entered valid use name and password';
-                  header("Location: backstreet.html");
+                  header("Location: index.html");
                }else {
                   $msg = 'Wrong username or password';
                }
