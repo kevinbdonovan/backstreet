@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Backstreet Boys</title>
+		<link href="css/style.css" type="text/css" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="form.js"></script>
+    <script>
+      function showCD(str) {
+         if (str=="") {
+          document.getElementById("txtHint").innerHTML="";
+          return;
+        } 
+        if (window.XMLHttpRequest) {
+          // code for IE7+, Firefox, Chrome, Opera, Safari
+          xmlhttp=new XMLHttpRequest();
+        } else {  // code for IE6, IE5
+          xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange=function() {
+          if (this.readyState==4 && this.status==200) {
+            document.getElementById("txtHint").innerHTML=this.responseText;
+          }
+        }
+        xmlhttp.open("GET","getcd.php?q="+str,true);
+        xmlhttp.send();
+      }
+    </script>
+	</head>
+	<body>
+		<section id="home">
+			<nav>
+				<ul>
+					<li><a href="#home"> Home</a></li>
+					<li><a href="#about"> About</a></li>
+					<li><a href="#music"> Music</a></li>
+					<li><a href="#albums"> Albums</a></li>
+					<li><a href="#contact"> Contact</a></li>
+				</ul>
+			</nav>
+			<h1>Home</h1>
+		<h2>"Backstreet's Back, Alright!"</h2>
+		<div class="center" >
+			<iframe width= 80% height=500px 
+			src="https://www.youtube.com/embed/6M6samPEMpM">
+			</iframe>
+		</div>
+		</section>
+		<section id="about">
+			<h1>About the Band</h1>
+			<div class="main" >
+				<div class="imageright"><img src="images/lol.jpg" alt="LOL"></div>
+				<p>The group rose to fame with their debut international album, Backstreet Boys (1996). In the following year they released their second international album Backstreet's Back (1997, pictured on the right) along with their self-titled U.S. debut album, which continued the group's success worldwide. They rose to superstardom with their third studio album Millennium (1999) and its follow-up album, Black & Blue (2000).</p>
+			</div>
+		</section>
+		<section id="music">
+			<h1>Music</h1>
+			<div class="main" >
+				<div class="spotifyright">
+				<iframe src="https://open.spotify.com/embed/album/1oWxRkI4V9d3hH3PqWpx9H" width="700" height="500" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+				</div>
+				<p>The group rose to fame with their debut international album, Backstreet Boys (1996). In the following year they released their second international album Backstreet's Back (1997, pictured on the right) along with their self-titled U.S. debut album, which continued the group's success worldwide. They rose to superstardom with their third studio album Millennium (1999) and its follow-up album, Black &amp; Blue (2000).</p>
+			</div>
+		</section>
+		<section id="albums">
+			<h1>Our Albums</h1>
+			<div class="center" >
+        <form>
+          <select name="cds" onchange="showCD(this.value)">
+            <option value="">Select an Album:</option>
+            <option value="Backstreet Boys">Backstreet Boys</option>
+            <option value="Backstreet's Back">Backstreet's Back</option>
+            <option value="Millennium">Millennium</option>
+            <option value="Black and Blue">Backstreet Boys</option>
+            <option value="Never Gone">Backstreet's Back</option>
+            <option value="Unbreakable">Unbreakable</option>
+            <option value="This Is Us">This is Us</option>
+            <option value="In a World Like This">In a World Like This</option>
+          </select>
+         </form>
+          <div id="txtHint"><b>Album information will go here!</b></div>
+			</div>
+		</section>
+		<section id="contact">
+			<h1>Contact Us</h1>
+			<div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3" id="form_container">
+                    <h2>
+                      Send us a message!
+                  </h2>
+                    <form role="form" method="post" id="reused_form">
+                        <div class="row">
+                            <div class="col-sm-12 form-group">
+                                <label for="message"> Message:</label>
+                                <textarea class="form-control" type="textarea" id="message" name="message" maxlength="6000" rows="7"></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6 form-group">
+                                <label for="name"> Your Name:</label>
+                                <input type="text" class="form-control" id="name" name="name" required>
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <label for="email"> Email:</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 form-group">
+                                <button type="submit" class="btn btn-lg btn-default pull-right" >Send &rarr;</button>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="success_message" style="width:100%; height:100%; display:none; "> <h3>Posted your message successfully!</h3> </div>
+                    <div id="error_message" style="width:100%; height:100%; display:none; "> <h3>Error</h3> Sorry there was an error sending your form. </div>
+                </div>
+            </div>
+        </div>
+		</section>
+	</body>
+</html>
