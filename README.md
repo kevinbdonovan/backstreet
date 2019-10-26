@@ -1,13 +1,8 @@
 # backstreet
 Backstreet is back, alright?
 
-So this is a group project I did with two other guys, both of whom did very little in terms of code.
+This was a project i did for college, kinda failed in what i wanted it to do, whilst it doesn't look the best, I was using it to try and link to APIs and use some bits I never used before (pulling from an XML file etc)
 
-It has alot to improve on, and one day I will return to it, I wrote all the CSS myself which im proud of, but like i said,
-I need my skills to improve if i want to be at the level I can.
+It's far from perfect, but I'm leaving it here just so I can look back
 
-This is my learning curve, whilst im not 100% proud of this, it'll hopefully show in future how far ive come, and if im honest I did
-learn alot from this.
-
-Peace out!
 Kevin
